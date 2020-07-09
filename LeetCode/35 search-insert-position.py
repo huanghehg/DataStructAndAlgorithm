@@ -25,7 +25,7 @@
 
 class Solution:
     def searchInsert(self, nums: list, target: int) -> int:
-        if target in nums: return nums[target]
+        if target in nums: return nums.index(target)
         start = 0
         end = len(nums) - 1
         while start <= end:
