@@ -23,14 +23,24 @@
 # 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        if x < 0: return False
+        # if x < 0: return False
+        # if x < 10: return True
+        # rev = 0
+        # ori = x
+        # while x // 10 > 0:
+        #     a = x % 10
+        #     rev = rev * 10 + a
+        #     x = x // 10
+        # return True if rev * 10 + x == ori else False
+        if x < 0 : return False
         if x < 10: return True
-        rev = 0
-        ori = x
-        while x // 10 > 0:
-            a = x % 10
-            rev = rev * 10 + a
+        if x % 10 == 0: return False
+        rever = 0
+        while x > rever:
+            rever = rever * 10 + x % 10
             x = x // 10
-        return True if rev * 10 + x == ori else False
+        return x == rever or x == rever // 10
+
+
 if __name__ == '__main__':
     print(Solution().isPalindrome(12321))
